@@ -9,7 +9,7 @@ import eu.pb4.predicate.api.PredicateResult;
 import net.minecraft.util.Identifier;
 
 public final class OperatorPredicate extends AbstractPredicate {
-    public static final Identifier ID = new Identifier("operator");
+    public static final Identifier ID = Identifier.method_60656("operator");
     public static final MapCodec<OperatorPredicate> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             Codec.INT.fieldOf("operator").forGetter(OperatorPredicate::operator)
     ).apply(instance, OperatorPredicate::new));

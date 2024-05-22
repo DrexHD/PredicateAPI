@@ -1,18 +1,15 @@
 package eu.pb4.predicate.impl.predicates.player;
 
-import com.google.gson.JsonElement;
-import com.mojang.datafixers.util.Pair;
-import com.mojang.serialization.*;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import eu.pb4.predicate.api.AbstractPredicate;
 import eu.pb4.predicate.api.PredicateContext;
 import eu.pb4.predicate.api.PredicateResult;
 import net.minecraft.predicate.entity.EntityPredicate;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.dynamic.Codecs;
 
 public class EntityPredicatePredicate extends AbstractPredicate {
-    public static final Identifier ID = new Identifier("entity");
+    public static final Identifier ID = Identifier.method_60656("entity");
 
     public static final MapCodec<EntityPredicatePredicate> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
             EntityPredicate.CODEC.fieldOf("value").forGetter(EntityPredicatePredicate::predicate)
